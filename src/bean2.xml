@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 本 XML 用于演示 Bean 的生命周期 -->
+
+    <bean id="order" class="com.spring.demo.bean.lifecycle.Order" init-method="init" destroy-method="destroy">
+        <property name="name" value="Max Pro" />
+    </bean>
+
+    <!-- 配置后置处理器 -->
+    <bean id="myBeanPost" class="com.spring.demo.bean.lifecycle.MyBeanPost" />
+</beans>
