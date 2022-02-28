@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 本 XML 用于演示基于注解的 Bean 操作管理 -->
+
+    <!-- 开启组件扫描：如果扫描多个包，多个包之间使用英文逗号拼接或者扫描上一层目录 -->
+    <context:component-scan base-package="com.spring.demo.bean.annotation" />
+
+
+    <!-- 更加详细的“开启组件扫描”的配置 -->
+<!--
+    示例1：扫描带了 @Component 注解的类
+    <c:component-scan base-package="com.spring.demo.bean.annotation" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
+    </c:component-scan>
+
+    示例2：不扫描带了 @Component 注解的类
+    <c:component-scan base-package="com.spring.demo.bean.annotation" use-default-filters="false">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Component"/>
+    </c:component-scan>
+-->
+</beans>
