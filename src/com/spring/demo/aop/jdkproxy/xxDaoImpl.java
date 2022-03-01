@@ -1,3 +1,5 @@
+package com.spring.demo.aop.jdkproxy;
+
 public class xxDaoImpl implements xxDao {
     @Override
     public int add(int a, int b) {

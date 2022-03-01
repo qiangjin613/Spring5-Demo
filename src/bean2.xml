@@ -5,10 +5,13 @@
 
     <!-- 本 XML 用于演示 Bean 的生命周期 -->
 
-    <bean id="order" class="com.spring.demo.bean.lifecycle.Order" init-method="init" destroy-method="destroy">
-        <property name="name" value="Max Pro" />
+    <bean id="zhangSan" class="com.spring.demo.bean.lifecycle.ZhangSan" init-method="initMethod" destroy-method="destroyMethod">
+        <property name="age" value="23" />
     </bean>
 
-    <!-- 配置后置处理器 -->
-    <bean id="myBeanPost" class="com.spring.demo.bean.lifecycle.MyBeanPost" />
+    <bean id="myBeanFactoryPostProcessor" class="com.spring.demo.bean.lifecycle.MyBeanFactoryPostProcessor" />
+    <!-- 配置作用于实例化阶段前后的 Bean 后置处理器 -->
+    <bean id="myInstantiationAwareBeanPostProcessor" class="com.spring.demo.bean.lifecycle.MyInstantiationAwareBeanPostProcessor" />
+    <!-- 配置作用于初始化阶段前后的 Bean 后置处理器 -->
+    <bean id="myBeanPostProcessor" class="com.spring.demo.bean.lifecycle.MyBeanPostProcessor" />
 </beans>
