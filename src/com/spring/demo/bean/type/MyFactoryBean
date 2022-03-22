@@ -1,0 +1,34 @@
+package com.spring.demo.bean.type;
+
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/**
+ * 工厂 Bean
+ */
+class Course {}
+
+public class MyFactoryBean implements FactoryBean<Course> {
+
+    @Override
+    public Course getObject() throws Exception {
+        return new Course();
+    }
+
+    @Override
+    public Class<?> getObjectType() {
+        return null;
+    }
+}
+
+class TestMyBeanFactory {
+    public static void main(String[] args) {
+        // 1. 加载 Spring 配置文件
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+
+        // 2. 获取配置创建的对象
+        Course course = context.getBean("myFactoryBean", Course.class);
+        System.out.println(course);
+    }
+}
