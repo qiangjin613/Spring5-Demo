@@ -5,4 +5,7 @@
 
     <!-- 配置 User 对象的创建（简单 Bean） -->
     <bean id="user" class="com.spring.demo.bean.type.User" />
+       
+    <!-- 配置 MyBeanFactory 对象的创建（工厂 Bean） -->
+    <bean id="myBeanFactory" class="com.spring.demo.bean.type.MyBeanFactory" />
 </beans>
